@@ -53,7 +53,7 @@
 	}
 
 	.hero-images-container {
-		width: 100%;
+		width: 95%;
 		max-width: 1100px;
 		aspect-ratio: 16/9;
 		position: relative;
@@ -141,7 +141,9 @@
 
 	.stats-row {
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
+		justify-items: center;
+		align-items: center;
 		gap: 40px;
 
 		@media screen and (min-width: 768px) {
@@ -154,10 +156,13 @@
 		flex: 1;
 
 		h2 {
-			font-size: 2.5rem;
-
+			font-size: 1.5rem;
 			font-weight: 800;
 			text-wrap: nowrap;
+
+			@media screen and (min-width: 768px) {
+				font-size: 2rem;
+			}
 		}
 
 		p {
@@ -233,9 +238,13 @@
 			bottom: 30px;
 			left: 20px;
 			color: white;
-			font-size: 1.5rem;
 			font-weight: 600;
 			z-index: 3;
+			font-size: 1.1rem;
+
+			@media screen and (min-width: 768px) {
+				font-size: 1.5rem;
+			}
 		}
 
 		&::after {

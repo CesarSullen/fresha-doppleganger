@@ -494,7 +494,7 @@ section {
   }
 }
 .hero .hero-images-container {
-  width: 100%;
+  width: 95%;
   max-width: 1100px;
   aspect-ratio: 16/9;
   position: relative;
@@ -571,7 +571,9 @@ section {
 }
 .social-proof-container .stats-row {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
   gap: 40px;
 }
 @media screen and (min-width: 768px) {
@@ -584,9 +586,14 @@ section {
   flex: 1;
 }
 .social-proof-container .stat-item h2 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 800;
   text-wrap: nowrap;
+}
+@media screen and (min-width: 768px) {
+  .social-proof-container .stat-item h2 {
+    font-size: 2rem;
+  }
 }
 .social-proof-container .stat-item p {
   font-size: 1.2rem;
@@ -648,9 +655,14 @@ section {
   bottom: 30px;
   left: 20px;
   color: white;
-  font-size: 1.5rem;
   font-weight: 600;
   z-index: 3;
+  font-size: 1.1rem;
+}
+@media screen and (min-width: 768px) {
+  .services-section .service-card .service-title {
+    font-size: 1.5rem;
+  }
 }
 .services-section .service-card::after {
   content: url("../assets/icons/arrow-circle-right-fill.svg");
