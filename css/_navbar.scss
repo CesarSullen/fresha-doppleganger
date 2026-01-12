@@ -4,6 +4,10 @@
 	width: 100%;
 	padding: 1rem;
 	position: sticky;
+	top: 0;
+	z-index: 999;
+	background: hsla(0, 0%, 100%, 0.8);
+	backdrop-filter: blur(10px);
 
 	.nav-brand {
 		display: flex;
@@ -23,20 +27,16 @@
 		z-index: 1000;
 	}
 
-	.nav-toggle {
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-		gap: 5px;
-
+	.ghost-btn {
+		border: none;
+		padding: 0.5rem;
 		@media screen and (min-width: 768px) {
 			border: $border-soft;
-			border-radius: $border-radius-rounded;
-			padding: 0.5rem;
+			padding: 0.7rem 1.8rem;
 		}
 	}
 
-	.nav-toggle-text {
+	.nav-btn-text {
 		display: none;
 
 		@media screen and (min-width: 768px) {
@@ -44,7 +44,7 @@
 		}
 	}
 
-	.burger-menu {
+	.nav-btn-icon {
 		width: 35px;
 
 		@media screen and (min-width: 768px) {
@@ -80,7 +80,7 @@
 		.nav-link {
 			font-size: 1.1rem;
 			color: $dark-color;
-			font-weight: 400;
+			font-weight: 500;
 
 			&:hover {
 				color: $primary-color;
