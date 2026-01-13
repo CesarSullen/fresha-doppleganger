@@ -1,21 +1,23 @@
-// Nav Bar Toggle
 const navToggle = document.getElementById("nav-toggle");
-const navMenu = document.getElementById("nav-menu"); // Usamos #nav-menu en lugar de #bottom-panel
+const navMenu = document.getElementById("nav-menu");
+const toggleIcon = document.getElementById("toggle-icon");
 
-// 1. Alternar Menú y Rotación de Barras al hacer clic
 navToggle.addEventListener("click", () => {
-	// Aplica/Remueve la clase de rotación (para la cruz)
-	navToggle.classList.toggle("toggled");
+	const isOpen = navMenu.classList.toggle("show-menu");
 
-	// Aplica/Remueve la clase de visibilidad (para el menú completo)
-	navMenu.classList.toggle("show-menu");
+	if (isOpen) {
+		toggleIcon.src = "../assets/icons/x.svg";
+		document.body.style.overflow = "hidden";
+	} else {
+		toggleIcon.src = "../assets/icons/menu.svg";
+		document.body.style.overflow = "auto";
+	}
 });
 
-// 2. Cerrar Menú al hacer clic en un enlace
-document.querySelectorAll(".nav-menu a").forEach((link) => {
+document.querySelectorAll(".overlay-item").forEach((link) => {
 	link.addEventListener("click", () => {
-		// Remueve las clases para ocultar el menú y deshacer la cruz
 		navMenu.classList.remove("show-menu");
-		navToggle.classList.remove("toggled");
+		toggleIcon.src = "../assets/icons/menu.svg";
+		document.body.style.overflow = "auto";
 	});
 });

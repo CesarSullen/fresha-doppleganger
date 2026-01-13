@@ -27,24 +27,86 @@
 					<span class="brand-name">fresha.</span>
 				</div>
 
-				<div class="nav-menu" id="nav-menu">
+				<div class="nav-desktop-links">
 					<a href="#" class="nav-link">Tipos de negocios</a>
 					<a href="#" class="nav-link">Pagos</a>
 					<a href="#" class="nav-link">Precios</a>
 				</div>
 
 				<div class="nav-actions">
-					<button class="btn ghost-btn">
-						<img
-							src="./assets/icons/storefront.svg"
-							class="nav-btn-icon mobile-hide"
-						/>
+					<button class="btn ghost-btn mobile-hide">
+						<img src="./assets/icons/storefront.svg" class="nav-btn-icon" />
 						<span class="nav-btn-text">Marketplace</span>
 					</button>
 					<button class="btn btn-primary">Registrarse</button>
+
 					<div class="btn ghost-btn" id="nav-toggle">
 						<span class="nav-btn-text">Menú</span>
-						<img src="./assets/icons/menu.svg" class="nav-btn-icon" />
+						<img
+							src="./assets/icons/menu.svg"
+							class="nav-btn-icon"
+							id="toggle-icon"
+						/>
+					</div>
+				</div>
+
+				<div class="nav-overlay" id="nav-menu">
+					<div class="overlay-content">
+						<h2 class="overlay-title">Para negocios</h2>
+
+						<div class="overlay-card">
+							<a href="#" class="overlay-item primary-item">
+								<span>Iniciar sesión o registrarse</span>
+								<img src="./assets/icons/chevron-right.svg" alt="ir" />
+							</a>
+							<a href="#" class="overlay-item">
+								<span>Inicio</span>
+								<img src="./assets/icons/chevron-right.svg" alt="ir" />
+							</a>
+							<a href="#" class="overlay-item">
+								<span>Tipos de negocio</span>
+								<img src="./assets/icons/chevron-right.svg" alt="ir" />
+							</a>
+							<a href="#" class="overlay-item">
+								<span>Pagos</span>
+								<img src="./assets/icons/chevron-right.svg" alt="ir" />
+							</a>
+							<a href="#" class="overlay-item">
+								<span>Precios</span>
+								<img src="./assets/icons/chevron-right.svg" alt="ir" />
+							</a>
+						</div>
+
+						<div class="overlay-card">
+							<a href="#" class="overlay-item">
+								<span>Descargar la app</span>
+								<img src="./assets/icons/chevron-right.svg" alt="ir" />
+							</a>
+							<a href="#" class="overlay-item">
+								<span>Blog</span>
+								<img src="./assets/icons/chevron-right.svg" alt="ir" />
+							</a>
+							<a href="#" class="overlay-item">
+								<span>Ayuda y servicio al cliente</span>
+								<img src="./assets/icons/chevron-right.svg" alt="ir" />
+							</a>
+							<a href="#" class="overlay-item">
+								<div class="lang-selector">
+									<img
+										src="./assets/icons/globe-hemisphere-west.svg"
+										alt="idioma"
+									/>
+									<span>español (ES)</span>
+								</div>
+								<img src="./assets/icons/chevron-right.svg" alt="ir" />
+							</a>
+						</div>
+						<div class="overlay-card">
+							<a href="#" class="overlay-item">
+								<span>Para clientes</span>
+								<img src="./assets/icons/arrow-right.svg" alt="ir" />
+							</a>
+						</div>
 					</div>
 				</div>
 			</nav>
@@ -150,7 +212,7 @@
 			<section id="services-section" class="services-section">
 				<div class="section-header">
 					<h1 class="section-title">Una plataforma, infinitas posibilidades</h1>
-					<p>
+					<p class="section-description">
 						Todo lo que necesitas para crecer y triunfar. Fresha incluye las
 						herramientas clave para impulsar tus ventas, gestionar tu calendario
 						y fidelizar a tus clientes, para que puedas concentrarte en lo que
@@ -278,6 +340,125 @@
 							las inasistencias con pagos anticipados y simplifica el proceso de
 							venta.
 						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="showcase-section">
+				<div class="showcase-container">
+					<div class="content-wrapper">
+						<h2 class="section-title">
+							<span>Software</span> todo en uno para gestionar tu negocio
+						</h2>
+						<p class="section-description">
+							El software de reservas preferido y mejor valorado por salones de
+							belleza, spas y negocios del sector de la belleza y el bienestar.
+						</p>
+
+						<ul class="features-list">
+							<li>
+								Calendario inteligente con reservas ilimitadas, gestión de
+								clientes, centros y mucho más
+							</li>
+							<li>
+								Informes avanzados que ofrecen información detallada sobre cada
+								cliente: el número de reservas, sus preferencias, sus métodos de
+								pago, sus canales de marketing favoritos, el importe que han
+								gastado en tu negocio, etc.
+							</li>
+							<li>
+								Diseño sencillo que mejora la experiencia, potencia tu negocio y
+								fortalece tu marca
+							</li>
+						</ul>
+					</div>
+
+					<div class="visuals-wrapper">
+						<video class="video-left" autoplay loop muted playsinline>
+							<source src="./assets/software-left.webm" type="video/webm" />
+						</video>
+						<img
+							src="./assets/mobile-calendar.jpg"
+							alt="Calendario móvil"
+							class="mobile-right"
+						/>
+					</div>
+				</div>
+			</section>
+
+			<section class="showcase-section marketplace">
+				<div class="showcase-container">
+					<div class="visuals-wrapper">
+						<img
+							src="./assets/mobile-marketplace.jpg"
+							alt="Marketplace App"
+							class="mobile-left"
+						/>
+						<video class="video-right" autoplay loop muted playsinline>
+							<source src="./assets/marketplace-right.webm" type="video/webm" />
+						</video>
+					</div>
+
+					<div class="content-wrapper">
+						<h2 class="section-title">
+							El mejor <span>marketplace</span> para potenciar tu negocio
+						</h2>
+						<p class="section-description">
+							Promociona tu negocio y capta nuevos clientes en el mayor
+							marketplace de belleza y bienestar del mundo.
+						</p>
+
+						<ul class="features-list">
+							<li>
+								Únete al marketplace de Fresha y aumenta tu visibilidad online
+							</li>
+							<li>
+								Atrae a millones de clientes que buscan reservar su próxima cita
+							</li>
+							<li>
+								Ahorra tiempo y permite a tus clientes reservar online en
+								cualquier momento
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="showcase-section payments">
+				<div class="showcase-container">
+					<div class="content-wrapper">
+						<h2 class="section-title">
+							Impulsa tu negocio con los <span>pagos</span> de Fresha
+						</h2>
+						<p class="section-description">
+							Pagos sencillos, seguros y asequibles, integrados directamente en
+							tu cuenta para facilitar cada venta.
+						</p>
+
+						<ul class="features-list">
+							<li>
+								Recibe pagos fácilmente, online o en persona, con el datáfono de
+								Fresha
+							</li>
+							<li>
+								Reduce las inasistencias y las cancelaciones cobrando el pago
+								completo por adelantado o un depósito al reservar
+							</li>
+							<li>Garantiza la liquidez de tu cuenta con pagos diarios</li>
+						</ul>
+
+						<a href="#" class="btn btn-primary">
+							Más información
+							<img src="./assets/icons/arrow-right.svg" class="btn-icon" />
+						</a>
+					</div>
+
+					<div class="visuals-wrapper single-image">
+						<img
+							src="./assets/terminal-payment.png"
+							alt="Terminal de pago Fresha"
+							class="payment-terminal"
+						/>
 					</div>
 				</div>
 			</section>
