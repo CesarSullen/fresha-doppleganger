@@ -127,7 +127,9 @@ section {
   margin-bottom: 3rem;
 }
 .section-header .section-description {
+  margin: 0 auto;
   margin-bottom: 2rem;
+  color: #666;
   line-height: 1.5;
   max-width: 900px;
 }
@@ -175,6 +177,7 @@ section {
 }
 .nav .nav-actions {
   display: flex;
+  align-items: center;
   gap: 12px;
   z-index: 999;
 }
@@ -216,6 +219,7 @@ section {
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 900;
 }
 .nav .nav-overlay.show-menu {
   opacity: 1;
@@ -636,10 +640,6 @@ section {
   text-align: center;
   width: 100%;
 }
-.services-section .section-description {
-  color: #666;
-  margin: 0 auto 2rem;
-}
 .services-section .btn-primary {
   margin: 0 auto;
 }
@@ -737,7 +737,8 @@ section {
   max-width: 80px;
 }
 .prices-section .price-img:nth-child(4), .prices-section .price-img:nth-child(6) {
-  max-width: 120px;
+  max-width: unset;
+  max-height: 100%;
 }
 
 .management-section {
@@ -888,191 +889,4 @@ section {
   object-fit: cover;
 }
 
-.carousel-section {
-  width: 100%;
-  overflow-x: hidden;
-  padding-block: 80px;
-}
-.carousel-section .section-header {
-  max-width: 800px;
-  margin-bottom: 3rem;
-}
-.carousel-section .carousel-container {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  padding-bottom: 10px;
-}
-.carousel-section .carousel-container::-webkit-scrollbar {
-  display: none;
-}
-.carousel-section .carousel-item {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  width: 85%;
-  aspect-ratio: 3/4;
-}
-@media screen and (min-width: 768px) {
-  .carousel-section .carousel-item {
-    width: 300px;
-  }
-}
-.carousel-section .review-card,
-.carousel-section .stats-card {
-  background-color: #f9f9f9;
-  border-radius: 18px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-@media screen and (min-width: 768px) {
-  .carousel-section.testimonials .carousel-item:first-child {
-    width: 800px;
-    aspect-ratio: 16/9;
-  }
-}
-.carousel-section.testimonials .review-card {
-  padding-inline: 20px;
-  padding-block: 2.5rem;
-  justify-content: flex-start;
-}
-.carousel-section.testimonials .review-card .stars {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-.carousel-section.testimonials .review-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-.carousel-section.testimonials .review-card p {
-  line-height: 1.5;
-  font-size: 0.95rem;
-}
-.carousel-section.testimonials .review-card .see-more {
-  color: #6950f3;
-  margin-top: auto;
-  font-weight: 600;
-  cursor: pointer;
-}
-.carousel-section.testimonials .video-item .video-wrapper {
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  height: 100%;
-}
-.carousel-section.testimonials .video-item .video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.carousel-section.testimonials .video-item .video-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
-}
-.carousel-section.testimonials .video-item .video-caption .user-thumb {
-  width: 40px;
-  border-radius: 50%;
-  border: 2px solid white;
-}
-.carousel-section.testimonials .video-item .video-caption .user-name {
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-.carousel-section.testimonials .video-item .video-caption .user-role {
-  font-size: 0.8rem;
-  opacity: 0.8;
-}
-.carousel-section.stats .stats-card {
-  padding: 40px;
-  justify-content: space-between;
-}
-.carousel-section.stats .stats-card .stat-number {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #6950f3;
-}
-.carousel-section.stats .stats-card .stat-label {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-.carousel-section.stats .stats-card p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-.carousel-section .carousel-controls {
-  display: flex;
-  gap: 15px;
-  margin-top: 30px;
-}
-.carousel-section .carousel-controls .ctrl-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: solid 0.5px rgba(0, 0, 0, 0.1);
-  background: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-.carousel-section .carousel-controls .ctrl-btn:hover {
-  background: #f0f0f0;
-  transform: scale(1.05);
-}
-.carousel-section .carousel-controls .ctrl-btn img {
-  width: 20px;
-}
-
-.success-section {
-  background-color: #f5f5f5;
-  max-width: none;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-block: 4rem;
-}
-.success-section .section-header {
-  width: 100%;
-  max-width: 1100px;
-}
-.success-section .section-header .section-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-.success-section .success-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  max-width: 1100px;
-  width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .success-section .success-container {
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 60px;
-    row-gap: 50px;
-  }
-}
-.success-section .success-item h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-.success-section .success-item p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css-w.map */
