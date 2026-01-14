@@ -7,10 +7,8 @@ navToggle.addEventListener("click", () => {
 
 	if (isOpen) {
 		toggleIcon.src = "./assets/icons/x.svg";
-		document.body.style.overflow = "hidden";
 	} else {
 		toggleIcon.src = "./assets/icons/menu.svg";
-		document.body.style.overflow = "auto";
 	}
 });
 
@@ -18,7 +16,6 @@ document.querySelectorAll(".overlay-item").forEach((link) => {
 	link.addEventListener("click", () => {
 		navMenu.classList.remove("show-menu");
 		toggleIcon.src = "./assets/icons/menu.svg";
-		document.body.style.overflow = "auto";
 	});
 });
 

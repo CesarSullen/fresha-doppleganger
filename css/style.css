@@ -198,6 +198,7 @@ section {
 }
 .nav .nav-btn-icon {
   width: 35px;
+  z-index: 999;
 }
 @media screen and (min-width: 768px) {
   .nav .nav-btn-icon {
@@ -737,10 +738,6 @@ section {
   width: 100%;
   max-width: 80px;
 }
-.prices-section .price-img:nth-child(4), .prices-section .price-img:nth-child(6) {
-  max-width: 120px;
-}
-
 .management-section {
   background-color: #dbddff;
   text-align: left;
@@ -1051,9 +1048,14 @@ section {
   width: 100%;
   max-width: 1100px;
 }
+@media screen and (max-width: 768px) {
+  .success-section .section-header .section-title {
+    font-size: 2rem;
+  }
+}
 .success-section .section-header .section-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  margin: unset;
+  max-width: 700px;
 }
 .success-section .success-container {
   display: grid;
@@ -1076,6 +1078,7 @@ section {
 .success-section .success-item p {
   font-size: 0.9rem;
   line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
