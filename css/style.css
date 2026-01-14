@@ -725,6 +725,7 @@ section {
   align-items: center;
   gap: 2rem;
   max-width: 1000px;
+  overflow-x: hidden;
 }
 @media screen and (min-width: 768px) {
   .prices-section {
@@ -901,17 +902,19 @@ section {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  padding-bottom: 10px;
+  padding-block: 1rem;
 }
 .carousel-section .carousel-container::-webkit-scrollbar {
   display: none;
 }
 .carousel-section .carousel-item {
+  height: max-content;
   flex: 0 0 auto;
   scroll-snap-align: start;
-  width: 85%;
+  width: 100%;
   aspect-ratio: 3/4;
 }
 @media screen and (min-width: 768px) {
