@@ -118,7 +118,7 @@ svg {
 		color: $dark-color;
 
 		&:hover {
-			border-color: black;
+			border-color: #333;
 		}
 	}
 }
@@ -135,19 +135,24 @@ svg {
 section {
 	padding: 1.5rem;
 	max-width: 1200px;
+	width: 100%;
 	margin-top: 50px;
-}
-
-.section-title {
-	font-size: 2.5rem;
-	font-weight: 600;
-	color: $dark-color;
-	margin-bottom: 1rem;
-	line-height: 1.2;
 }
 
 .section-header {
 	margin-bottom: 3rem;
+
+	.section-title {
+		font-size: 2rem;
+		font-weight: 600;
+		color: $dark-color;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+
+		@media screen and (min-width: 768px) {
+			font-size: 2.5rem;
+		}
+	}
 
 	.section-description {
 		margin-bottom: 2rem;

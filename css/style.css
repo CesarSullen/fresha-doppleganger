@@ -97,7 +97,7 @@ svg {
   color: #141414;
 }
 .btn.ghost-btn:hover {
-  border-color: black;
+  border-color: #333;
 }
 
 /* =====================
@@ -112,19 +112,24 @@ svg {
 section {
   padding: 1.5rem;
   max-width: 1200px;
+  width: 100%;
   margin-top: 50px;
 }
 
-.section-title {
-  font-size: 2.5rem;
+.section-header {
+  margin-bottom: 3rem;
+}
+.section-header .section-title {
+  font-size: 2rem;
   font-weight: 600;
   color: #141414;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
-
-.section-header {
-  margin-bottom: 3rem;
+@media screen and (min-width: 768px) {
+  .section-header .section-title {
+    font-size: 2.5rem;
+  }
 }
 .section-header .section-description {
   margin-bottom: 2rem;
@@ -635,7 +640,6 @@ section {
 
 .services-section {
   text-align: center;
-  width: 100%;
 }
 .services-section .section-description {
   color: #666;
@@ -737,12 +741,17 @@ section {
 .prices-section .price-img {
   width: 100%;
   max-width: 80px;
+  /* 		&:nth-child(4),
+  &:nth-child(6) {
+  	// max-width: 120px;
+  	// max-height: 100%;
+  } */
 }
+
 .management-section {
   background-color: #dbddff;
   text-align: left;
   max-width: none;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -778,7 +787,6 @@ section {
 }
 
 .showcase-section {
-  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -887,7 +895,6 @@ section {
 }
 
 .carousel-section {
-  width: 100%;
   overflow-x: hidden;
   padding-block: 80px;
 }
@@ -908,11 +915,9 @@ section {
   display: none;
 }
 .carousel-section .carousel-item {
-  height: max-content;
   flex: 0 0 auto;
   scroll-snap-align: start;
   width: 100%;
-  aspect-ratio: 3/4;
 }
 @media screen and (min-width: 768px) {
   .carousel-section .carousel-item {
@@ -923,9 +928,6 @@ section {
 .carousel-section .stats-card {
   background-color: #f9f9f9;
   border-radius: 18px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 @media screen and (min-width: 768px) {
@@ -937,7 +939,9 @@ section {
 .carousel-section.testimonials .review-card {
   padding-inline: 20px;
   padding-block: 2.5rem;
-  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .carousel-section.testimonials .review-card .stars {
   font-size: 1.2rem;
@@ -978,6 +982,10 @@ section {
   gap: 10px;
   color: white;
 }
+.carousel-section.testimonials .video-item .video-caption div {
+  display: flex;
+  flex-direction: column;
+}
 .carousel-section.testimonials .video-item .video-caption .user-thumb {
   width: 40px;
   border-radius: 50%;
@@ -994,6 +1002,7 @@ section {
 .carousel-section.stats .stats-card {
   padding: 40px;
   justify-content: space-between;
+  aspect-ratio: 3/4;
 }
 .carousel-section.stats .stats-card .stat-number {
   font-size: 4rem;
@@ -1038,7 +1047,6 @@ section {
 .success-section {
   background-color: #f5f5f5;
   max-width: none;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1047,11 +1055,6 @@ section {
 .success-section .section-header {
   width: 100%;
   max-width: 1100px;
-}
-@media screen and (max-width: 768px) {
-  .success-section .section-header .section-title {
-    font-size: 2rem;
-  }
 }
 .success-section .section-header .section-description {
   margin: unset;
@@ -1079,6 +1082,103 @@ section {
   font-size: 0.9rem;
   line-height: 1.5;
   margin-bottom: 1.5rem;
+}
+
+.support-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.support-section .support-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .support-section .support-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.support-section .support-card {
+  padding: 2rem;
+  border-radius: 18px;
+  border: solid 0.5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.support-section .support-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.support-section .support-card p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.support-section .support-card .card-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+.support-section .support-card .card-link .btn-icon {
+  width: 25px;
+  filter: invert(1);
+}
+.support-section .support-card:hover {
+  background: #f0f0f0;
+  border-color: #333;
+}
+.support-section .support-card:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.faq-section {
+  max-width: 850px;
+}
+.faq-section .section-title {
+  text-align: center;
+}
+.faq-section .faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.faq-section .faq-item {
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+.faq-section .faq-item .faq-header {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+.faq-section .faq-item .faq-header .faq-icon {
+  width: 25px;
+}
+.faq-section .faq-item .faq-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: #767676;
+  transition: max-height 0.3s ease-in, opacity 0.2s ease-in-out;
+}
+.faq-section .faq-item .faq-content p {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  line-height: 1.6;
+}
+.faq-section .faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-section .faq-item.active .faq-content {
+  max-height: 500px;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */
