@@ -424,59 +424,100 @@ section {
     transform: translateY(0px);
   }
 }
-/* .footer {
-	background-color: #2d3138;
-	color: #a0a0a0;
-	padding: 1.5rem 0;
-	margin-top: auto;
-	font-size: 0.85rem;
-
-	.footer-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		@media (max-width: 600px) {
-			flex-direction: column;
-			gap: 15px;
-		}
-	}
-
-	.footer-links {
-		display: flex;
-		gap: 20px;
-
-		a {
-			transition: color 0.3s ease;
-			&:hover {
-				color: white;
-			}
-		}
-	}
-
-	.social-icons {
-		display: flex;
-		align-items: center;
-		gap: 15px;
-
-		a {
-			display: block;
-			transition: transform 0.3s ease, opacity 0.3s ease;
-
-			img {
-				width: 20px;
-				height: 20px;
-				display: block;
-			}
-
-			&:hover {
-				transform: translateY(-3px);
-				filter: brightness(1.2);
-			}
-		}
-	}
+@keyframes scrollInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px));
+  }
 }
- */
+.main-footer {
+  background-color: #000;
+  color: white;
+  padding-block: 80px;
+  padding-inline: 20px;
+}
+.main-footer .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+@media screen and (min-width: 1024px) {
+  .main-footer .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+.main-footer .footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 250px;
+}
+.main-footer .footer-brand .btn-primary {
+  filter: invert(1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.main-footer .footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  flex: 1;
+}
+.main-footer .footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.main-footer .footer-column ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.main-footer .footer-column ul a {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+.main-footer .footer-column ul a:hover {
+  text-decoration: underline;
+  color: white;
+}
+.main-footer .footer-column .social-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.main-footer .footer-column .social-links a img {
+  width: 18px;
+  opacity: 0.7;
+}
+.main-footer .footer-bottom {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.main-footer .footer-bottom .language-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.main-footer .footer-bottom .language-selector img {
+  width: 20px;
+  filter: invert(1);
+}
+
 /* =====================
    MIXINS
 ===================== */
@@ -1179,6 +1220,183 @@ section {
 .faq-section .faq-item.active .faq-content {
   max-height: 500px;
   opacity: 1;
+}
+
+.auto-slider-section {
+  width: 100%;
+  max-width: none;
+  overflow: hidden;
+}
+.auto-slider-section .section-title {
+  text-align: center;
+}
+.auto-slider-section .slider-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+.auto-slider-section .slider-row.reverse .slider-track {
+  animation-direction: reverse;
+}
+.auto-slider-section .slider-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollInfinite 40s linear infinite;
+}
+.auto-slider-section .slider-track:hover {
+  animation-play-state: paused;
+}
+.auto-slider-section .service-card {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 180px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.auto-slider-section .service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.25s ease;
+}
+.auto-slider-section .service-card span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+  z-index: 2;
+}
+.auto-slider-section .service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 50%);
+}
+.auto-slider-section .service-card::after {
+  content: url("../assets/icons/arrow-circle-right-fill.svg");
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  scale: 1.5;
+  z-index: 3;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.auto-slider-section .service-card:hover::after {
+  opacity: 1;
+}
+.auto-slider-section .service-card:hover img {
+  transform: scale(1.05);
+}
+
+.cta-section-2 {
+  width: 100%;
+  max-width: none;
+  padding-block: 8rem;
+  background: radial-gradient(circle at top left, #c15eff, #6a30ff, #4a15cc);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.cta-section-2 .section-header {
+  color: white;
+  margin-bottom: 0px !important;
+}
+.cta-section-2 .section-header .section-title {
+  color: white;
+}
+.cta-section-2 .btn-primary {
+  filter: invert(1);
+  transition: all 0.3s ease;
+}
+.cta-section-2 .btn-primary:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.apps-download-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.apps-download-section .apps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+@media screen and (min-width: 768px) {
+  .apps-download-section .apps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.apps-download-section .app-card {
+  background-color: #f9f9f9;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .apps-download-section .app-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+.apps-download-section .app-card .app-info {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.apps-download-section .app-card .app-info .app-logo {
+  width: 60px;
+  margin-bottom: 20px;
+}
+.apps-download-section .app-card .app-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.apps-download-section .app-card .app-info p {
+  color: #666;
+  margin-bottom: 30px;
+}
+.apps-download-section .app-card .app-info .store-links {
+  display: flex;
+  gap: 12px;
+}
+.apps-download-section .app-card .app-info .store-links .btn {
+  text-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.apps-download-section .app-card .mobile-img {
+  flex: 1;
+  max-width: 250px;
+  margin-top: 2rem;
+  align-self: center;
+  transform: translateY(0.45rem);
+  border-radius: 18px;
+  background: hsla(0, 0%, 100%, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: solid 1px white;
+  padding: 0.45rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 18px 18px 0 0;
+}
+@media screen and (min-width: 768px) {
+  .apps-download-section .app-card .mobile-img {
+    align-self: flex-end;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
